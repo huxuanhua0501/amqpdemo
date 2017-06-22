@@ -13,10 +13,13 @@ public class MqService implements IMqService {
     private net.xuanhuahu.mq.rabbitmq.mq.fanout.Producer fanoutProducer;
     @Autowired
     private net.xuanhuahu.mq.rabbitmq.mq.direct.Producer directProducer;
+    @Autowired
+    private  net.xuanhuahu.mq.rabbitmq.mq.topic.Producer topicProducer;
 
     public void send(String str) {
 
         fanoutProducer.send(str);
         directProducer.send(str);
+        topicProducer.send(str);
     }
 }

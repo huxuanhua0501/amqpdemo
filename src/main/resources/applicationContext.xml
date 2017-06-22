@@ -10,6 +10,7 @@
 	<context:annotation-config/>
 	<import resource="direct-rabbitmq.xml"/>
 	<import resource="fanout-rabbitmq.xml"/>
+	<import resource="topic-rabbitmq.xml"/>
 	<context:component-scan base-package="net.**.service" />
   <context:property-placeholder
         ignore-unresolvable="true" location="classpath:config.properties" />
