@@ -19,5 +19,6 @@
 >>>>>姥姥的方法是
 >>>>>>>>>爽肤水的方式
 
-![](http://www.baidu.com/img/bdlogo.gif) 
+[baidu]:(http://www.baidu.com/img/bdlogo.gif) 
+[![baidu]](http://wwww.baidu.com)
 ![](https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif)  
