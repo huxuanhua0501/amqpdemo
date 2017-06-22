@@ -24,4 +24,4 @@
 ![](https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif)  
 
 
-[百度](baidu.com)
+[百度](http://www.baidu.com)
