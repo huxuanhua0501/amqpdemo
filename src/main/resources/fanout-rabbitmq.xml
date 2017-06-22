@@ -24,7 +24,7 @@
     <!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->
     <rabbit:admin connection-factory="connectionFactory"/>
 
-    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="GofanoutExchange"/>
+    <rabbit:template id="fanoutamqpTemplate" connection-factory="connectionFactory" exchange="GofanoutExchange"/>
 
     <!--定义queue -->
     <rabbit:queue name="fanoutmq" durable="true" auto-delete="false" exclusive="false"/>
@@ -32,13 +32,13 @@
     <!-- 定义direct exchange，绑定queueTest -->
     <rabbit:fanout-exchange name="GofanoutExchange" durable="true" auto-delete="false">
         <rabbit:bindings>
-            <rabbit:binding queue="fanoutmq"/>
+            <rabbit:binding queue="fanoutmq" />
         </rabbit:bindings>
     </rabbit:fanout-exchange>
 
     <bean id="messageConsumer" class="net.xuanhuahu.mq.rabbitmq.mq.fanout.Consumer"/>
     <rabbit:listener-container connection-factory="connectionFactory"   acknowledge="auto" prefetch="1" >
-        <rabbit:listener queues="directmq" ref="messageConsumer"  method="onMessage"  />
+        <rabbit:listener queues="fanoutmq" ref="messageConsumer"  method="onMessage"  />
     </rabbit:listener-container>
 
 

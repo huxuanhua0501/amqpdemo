@@ -24,7 +24,7 @@
     <!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->
     <rabbit:admin connection-factory="connectionFactory"/>
 
-    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" />
+    <rabbit:template id="directamqpTemplate" connection-factory="connectionFactory" />
 
     <!--定义queue -->
     <rabbit:queue name="directmq" durable="true" auto-delete="false" exclusive="false"/>

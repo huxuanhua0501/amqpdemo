@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 /**
  * Created by win7 on 2017/6/19.
  */
-@Service
+@Service(value = "directProducer")
 public class Producer {
     @Autowired
-    private AmqpTemplate amqpTemplate;
+    private AmqpTemplate directamqpTemplate;
 
     public  void  send(Object obj){
-        amqpTemplate.convertAndSend("directmq",obj);
+        directamqpTemplate.convertAndSend("directmq",obj);
     }
 }

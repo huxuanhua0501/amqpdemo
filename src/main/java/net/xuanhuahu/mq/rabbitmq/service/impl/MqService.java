@@ -1,6 +1,5 @@
 package net.xuanhuahu.mq.rabbitmq.service.impl;
 
-import net.xuanhuahu.mq.rabbitmq.mq.Producer;
 import net.xuanhuahu.mq.rabbitmq.service.IMqService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class MqService implements IMqService {
     @Autowired
-    private Producer producer;
+    private net.xuanhuahu.mq.rabbitmq.mq.fanout.Producer fanoutProducer;
+    @Autowired
+    private net.xuanhuahu.mq.rabbitmq.mq.direct.Producer directProducer;
 
     public void send(String str) {
 
-      producer.send(str);
+        fanoutProducer.send(str);
+        directProducer.send(str);
     }
 }
