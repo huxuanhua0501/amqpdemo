@@ -54,6 +54,16 @@
 ![](https://camo.githubusercontent.com/db40ae7234033fe9d8e4ad42e41e690575170b61/687474703a2f2f7777772e67616f72742e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031332f30382f30626264636433642d396663362d333130372d623765302d6462363763313734643436612e706e67)
 >#### 任何发送到Topic Exchange的消息都会被转发到所有关心RouteKey中指定话题的Queue上<br/>
 >> * 这种模式需要绑定RoutKey<br/>
->> * 提前绑定Exchagne ,如果不绑定，消息会被自动抛弃
->> * 绑定时需要一个队列主题必须queue.*,queue.go,queue.two 都合理,queue.#，可以为queue.xxx.xxx
+>> * 提前绑定Exchagne ,如果不绑定，消息会被自动抛弃<br/>
+>> * 绑定时需要一个队列主题必须queue.*,queue.go,queue.two 都合理,queue.#，可以为queue.xxx.xxx<br/>
+
+
+>#### spring-amaqp的参数解释
+
+>>#####rabbit:connection-factory参数
+>>> username:rabbitmq 的用户名
+>>> password:密码
+>>> host:主机
+>>> port:端口号
+>>> virtual-host:虚拟主机
 

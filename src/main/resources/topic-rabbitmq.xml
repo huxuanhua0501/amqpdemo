@@ -20,7 +20,7 @@
                                   host="${mq_url}" port="${mq_port}"  virtual-host="${mq_vhost}"/>   -->
 
     <rabbit:connection-factory id="connectionFactory" username="${mq_user}" password="${mq_password}"
-                               host="${mq_url}" port="${mq_port}" />
+                               host="${mq_url}"  port="${mq_port}" publisher-confirms=""/>
     <!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->
     <rabbit:admin connection-factory="connectionFactory"/>
 
