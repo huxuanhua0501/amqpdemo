@@ -37,7 +37,7 @@
     </rabbit:fanout-exchange>
 -->
     <bean id="messageConsumer" class="net.xuanhuahu.mq.rabbitmq.mq.fanout.Consumer"/>
-    <rabbit:listener-container connection-factory="connectionFactory"   acknowledge="manual" prefetch="100">
+    <rabbit:listener-container connection-factory="connectionFactory"   acknowledge="manual" prefetch="100" concurrency="">
         <rabbit:listener queues="fanoutmq" ref="messageConsumer"  method="onMessage"   />
     </rabbit:listener-container>
 
